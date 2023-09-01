@@ -3,23 +3,23 @@ package nw.iv.primeno.rest.entity;
 import java.util.List;
 
 public class PrimeNumbers {
-	private long n;
-	private List<Long> pnList;
+	private int n;
+	private List<Integer> pnList;
 	private List<String> validationError;
 
-	public long getN() {
+	public int getN() {
 		return n;
 	}
 
-	public void setN(long n) {
+	public void setN(int n) {
 		this.n = n;
 	}
 
-	public List<Long> getPnList() {
+	public List<Integer> getPnList() {
 		return pnList;
 	}
 
-	public void setPnList(List<Long> pnList) {
+	public void setPnList(List<Integer> pnList) {
 		this.pnList = pnList;
 	}
 	

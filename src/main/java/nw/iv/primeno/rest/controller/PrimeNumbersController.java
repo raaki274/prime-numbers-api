@@ -20,9 +20,16 @@ public class PrimeNumbersController {
 	@Autowired
 	private Environment env;
 	
-    @GetMapping("/person/{N}")
+	@Autowired
+	private CalculationMethodFactory cf;
+	
+	@Autowired
+	private AsyncCalculator ac;
+	
+    @GetMapping("/primes/{N}")
     @ResponseStatus(HttpStatus.OK)
-    public PrimeNumbers get(@PathVariable long N) {
+    public PrimeNumbers get(@PathVariable int N) {
+    	System.out.println("Inside GET for naive method: "+N);
     	PrimeNumbers response = null;
     	List<String> err;
     	CalculationMethod calcMethod;
@@ -33,8 +40,15 @@ public class PrimeNumbersController {
     			response.setValidationError(err);
     			return response;
     		}
-    		calcMethod = new CalculationMethodFactory().getCalcMethod(null);
-    		response = calcMethod.calculatePrimeNumbers(N);
+    		
+    		if(N>10000000) {
+    			response = ac.asyncCalculator(N);
+    		} else {
+    			calcMethod = cf.getCalcMethod(null);
+        		response = calcMethod.calculatePrimeNumbers(N);
+        		System.out.println("pn list size:"+response.getPnList().size());
+    		}
+
     	} catch(Exception e) {
     		e.printStackTrace();
     		throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Please try after some time", e);
@@ -42,9 +56,9 @@ public class PrimeNumbersController {
         return response;
     }
     
-    @GetMapping("/person/{N}/{method}")
+    @GetMapping("/primes/{N}/{method}")
     @ResponseStatus(HttpStatus.OK)
-    public PrimeNumbers get(@PathVariable long N, @PathVariable String method) {
+    public PrimeNumbers get(@PathVariable int N, @PathVariable String method) {
     	System.out.println("Inside GET for calc method: "+N+" and "+method);
     	PrimeNumbers response = null;
     	List<String> err;
@@ -56,8 +70,9 @@ public class PrimeNumbersController {
     			response.setValidationError(err);
     			return response;
     		}
-    		calcMethod = new CalculationMethodFactory().getCalcMethod(CalcMethods.valueOf(method));
+    		calcMethod = cf.getCalcMethod(CalcMethods.valueOf(method));
     		response = calcMethod.calculatePrimeNumbers(N);
+    		System.out.println("pn list size:"+response.getPnList().size());
     	} catch(Exception e) {
     		e.printStackTrace();
     		throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Please try after some time", e);

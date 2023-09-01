@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Validator {
 	
-	public List<String> validateInput(long N) {
+	public List<String> validateInput(int N) {
 		
 		List<String> errList = new ArrayList<>();
 		if(N<=1)
@@ -15,7 +15,7 @@ public class Validator {
 		return errList;
 	}
 
-	public List<String> validateInput(long N, String calcMethod) {
+	public List<String> validateInput(int N, String calcMethod) {
 		
 		List<String> errList = validateInput(N);
  		List<CalcMethods> methods = Arrays.asList(CalcMethods.values());
