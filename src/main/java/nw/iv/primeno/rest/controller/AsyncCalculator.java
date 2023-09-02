@@ -7,6 +7,7 @@ import java.util.TreeMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Component;
 
@@ -21,14 +22,17 @@ public class AsyncCalculator {
 	@Autowired
 	private CalculationMethodFactory cf;
 	
+	@Autowired
+	private Environment env;
+	
 	@Cacheable(value = "primenumbers", key = "#n")
 	public PrimeNumbers asyncCalculator(int n) throws InterruptedException {
 		
-		int maxsize = 10000000;
-		int iter = n/maxsize;
-		int reminder = n%maxsize;
+		int sliceSize = Integer.parseInt(env.getProperty("MAX_SLICE_NUMBER"));
+		int iter = n/sliceSize;
+		int reminder = n%sliceSize;
 		int low = 1;
-		int high = maxsize;
+		int high = sliceSize;
 		
 		CalculationMethod calcMethod = cf.getCalcMethod(CalcMethods.segsie);
 		SortedMap<Integer, List<Integer>> cMap = new TreeMap<>();
@@ -37,7 +41,7 @@ public class AsyncCalculator {
 			pns = calcMethod.calculatePrimeNumbers(low+1, high);
 			cMap.put(Integer.valueOf(low), pns.getPnList());
 			low=high;
-			high=high+maxsize;
+			high=high+sliceSize;
 		}
 		if(reminder > 0) {
 			pns = calcMethod.calculatePrimeNumbers(high+1, high+reminder);
@@ -50,7 +54,7 @@ public class AsyncCalculator {
 		});
 		
 		pns = new PrimeNumbers();
-		pns.setN(n);
+		pns.setInitial(n);
 		pns.setPnList(pnList);
 		
 		return pns;

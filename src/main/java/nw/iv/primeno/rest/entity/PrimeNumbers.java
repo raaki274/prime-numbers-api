@@ -2,19 +2,32 @@ package nw.iv.primeno.rest.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PrimeNumbers {
-	private int n;
+	private int Initial;
+	private String calcMethod;
 	private List<Integer> pnList;
 	private List<String> validationError;
 
-	public int getN() {
-		return n;
+
+	public int getInitial() {
+		return Initial;
 	}
 
-	public void setN(int n) {
-		this.n = n;
+	public void setInitial(int initial) {
+		Initial = initial;
+	}
+	
+	public String getCalcMethod() {
+		return calcMethod;
 	}
 
+	public void setCalcMethod(String calcMethod) {
+		this.calcMethod = calcMethod;
+	}
+	
 	public List<Integer> getPnList() {
 		return pnList;
 	}

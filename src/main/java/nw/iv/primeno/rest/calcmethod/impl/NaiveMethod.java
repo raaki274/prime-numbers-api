@@ -21,9 +21,9 @@ public class NaiveMethod implements CalculationMethod {
             if (isPrimeNo(i))
             	pnList.add(Integer.valueOf(i));
         }
+        pns.setInitial(n);
         pns.setPnList(pnList);
-        pns.setN(n);
-        
+
 		return pns;
 	}
 

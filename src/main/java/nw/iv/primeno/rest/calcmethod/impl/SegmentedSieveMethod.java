@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,8 @@ import nw.iv.primeno.rest.entity.PrimeNumbers;
 
 @Service
 public class SegmentedSieveMethod implements CalculationMethod {
+	
+	private static final Logger logger = LoggerFactory.getLogger(SegmentedSieveMethod.class);
 	
 	@Override
 	@Cacheable(value = "primenumbers", key = "#n")
@@ -60,8 +64,8 @@ public class SegmentedSieveMethod implements CalculationMethod {
             low  = low + limit;
             high = high + limit;
         }
+        pns.setInitial(n);
         pns.setPnList(pnList);
-        pns.setN(n);
 			    
 		return pns;
 	}
@@ -95,7 +99,7 @@ public class SegmentedSieveMethod implements CalculationMethod {
 	@Override
 	public PrimeNumbers calculatePrimeNumbers(int low, int high)
     {
-		System.out.println("inside calc prime for a range: "+low);
+		logger.info("Inside calc prime for the range between: "+low+" and "+high);
 		PrimeNumbers pns = new PrimeNumbers();
 		List<Integer> pnList = new ArrayList<>();
 		
@@ -128,7 +132,7 @@ public class SegmentedSieveMethod implements CalculationMethod {
         }
         
         pns.setPnList(pnList);
-        pns.setN(low);
+        pns.setInitial(low);
         
         return pns;
     }

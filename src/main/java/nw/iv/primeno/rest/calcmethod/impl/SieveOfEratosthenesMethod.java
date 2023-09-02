@@ -26,8 +26,8 @@ public class SieveOfEratosthenesMethod implements CalculationMethod {
 			else if (i%2 == 1 && primeNos[i/2] == 0)
 				pnList.add(Integer.valueOf(i));
 		}
+        pns.setInitial(n);
         pns.setPnList(pnList);
-        pns.setN(n);
 		
 		return pns;
 	}
