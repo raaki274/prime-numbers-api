@@ -36,7 +36,8 @@ This API is deployed on Render and it cann be accessed through the URL https://p
 
 ## Sample response messages
 * Success response (JSON)
-`{
+```
+{
     "initial": 10,
     "primes": [
         2,
@@ -44,34 +45,41 @@ This API is deployed on Render and it cann be accessed through the URL https://p
         5,
         7
     ]
-}`
+}
+```
 
 * Validation error response for invalid number (JSON)
-`{
+```
+{
     "validationError": [
         "Received invalid number to calculate prime numbers"
     ],
     "initial": 1
-}`
+}
+```
 
 * Validation error response for invalid calc method (JSON)
-`{
+```
+{
     "calcMethod": "abc",
     "validationError": [
         "Received invalid calc method to calculate prime numbers, it should be any one of: [siera, segsie]"
     ],
     "initial": 5
-}`
+}
+```
 
 * Validation error response for invalid number and calc method (JSON)
-`{
+```
+{
     "calcMethod": "abc",
     "validationError": [
         "Received invalid number to calculate prime numbers",
         "Received invalid calc method to calculate prime numbers, it should be any one of: [siera, segsie]"
     ],
     "initial": 1
-}`
+}
+```
 
 
 
