@@ -65,7 +65,7 @@ public class SegmentedSieveMethod implements CalculationMethod {
             high = high + limit;
         }
         pns.setInitial(n);
-        pns.setPnList(pnList);
+        pns.setPrimes(pnList);
 			    
 		return pns;
 	}
@@ -131,7 +131,7 @@ public class SegmentedSieveMethod implements CalculationMethod {
             }
         }
         
-        pns.setPnList(pnList);
+        pns.setPrimes(pnList);
         pns.setInitial(low);
         
         return pns;

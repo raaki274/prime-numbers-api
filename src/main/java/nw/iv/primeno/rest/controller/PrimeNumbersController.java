@@ -65,11 +65,11 @@ public class PrimeNumbersController {
     		if(N>sliceSize) {
     			logger.info("Invoking concurrent algorithm for large number");
     			response = ac.asyncCalculator(N);
-    			logger.info("Prime numbers list size: "+response.getPnList().size());
+    			logger.info("Prime numbers list size: "+response.getPrimes().size());
     		} else {
     			calcMethod = cf.getCalcMethod(null);
         		response = calcMethod.calculatePrimeNumbers(N);
-        		logger.info("Prime numbers list size: "+response.getPnList().size());
+        		logger.info("Prime numbers list size: "+response.getPrimes().size());
     		}    		
     	} catch(Exception e) {
     		logger.error("Error captured: "+e.getMessage());
@@ -111,7 +111,7 @@ public class PrimeNumbersController {
     		}
     		calcMethod = cf.getCalcMethod(CalcMethods.valueOf(method));
     		response = calcMethod.calculatePrimeNumbers(N);
-    		logger.info("Prime numbers list size: "+response.getPnList().size());
+    		logger.info("Prime numbers list size: "+response.getPrimes().size());
     	} catch(Exception e) {
     		logger.error("Error captured: "+e.getMessage());
     		e.printStackTrace();

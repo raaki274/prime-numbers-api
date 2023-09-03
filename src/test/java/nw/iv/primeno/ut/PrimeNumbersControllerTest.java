@@ -31,7 +31,7 @@ public class PrimeNumbersControllerTest {
           .andDo(print())
           .andExpect(status().isOk())
           .andExpect(MockMvcResultMatchers.jsonPath("$.initial").value(70))
-          .andExpect(MockMvcResultMatchers.jsonPath("$.pnList").isArray());
+          .andExpect(MockMvcResultMatchers.jsonPath("$.primes").isArray());
     }
     
     @Test
@@ -43,7 +43,7 @@ public class PrimeNumbersControllerTest {
           .andDo(print())
           .andExpect(status().isOk())
           .andExpect(MockMvcResultMatchers.jsonPath("$.initial").value(20000000))
-          .andExpect(MockMvcResultMatchers.jsonPath("$.pnList").isArray());
+          .andExpect(MockMvcResultMatchers.jsonPath("$.primes").isArray());
     }
     
     @Test
@@ -55,7 +55,7 @@ public class PrimeNumbersControllerTest {
           .andDo(print())
           .andExpect(status().isOk())
           .andExpect(MockMvcResultMatchers.jsonPath("$.initial").value(2500))
-          .andExpect(MockMvcResultMatchers.jsonPath("$.pnList").isArray());
+          .andExpect(MockMvcResultMatchers.jsonPath("$.primes").isArray());
     }
     
     @Test
@@ -67,7 +67,7 @@ public class PrimeNumbersControllerTest {
           .andDo(print())
           .andExpect(status().isOk())
           .andExpect(MockMvcResultMatchers.jsonPath("$.initial").value(2500000))
-          .andExpect(MockMvcResultMatchers.jsonPath("$.pnList").isArray());
+          .andExpect(MockMvcResultMatchers.jsonPath("$.primes").isArray());
     }
     
     @Test
@@ -103,7 +103,7 @@ public class PrimeNumbersControllerTest {
           .andDo(print())
           .andExpect(status().isOk())
           .andExpect(MockMvcResultMatchers.xpath("//PrimeNumbers/initial").number(Double.valueOf(25)))
-          .andExpect(MockMvcResultMatchers.xpath("//PrimeNumbers/pnList/pnList").exists());
+          .andExpect(MockMvcResultMatchers.xpath("//PrimeNumbers/primes/primes").exists());
     }
     
     @Test
@@ -115,7 +115,7 @@ public class PrimeNumbersControllerTest {
           .andDo(print())
           .andExpect(status().isOk())
           .andExpect(MockMvcResultMatchers.xpath("//PrimeNumbers/initial").number(Double.valueOf(4500000)))
-          .andExpect(MockMvcResultMatchers.xpath("//PrimeNumbers/pnList/pnList").exists());
+          .andExpect(MockMvcResultMatchers.xpath("//PrimeNumbers/primes/primes").exists());
     }
     
     @Test

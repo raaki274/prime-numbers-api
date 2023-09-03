@@ -27,7 +27,7 @@ public class SieveOfEratosthenesMethod implements CalculationMethod {
 				pnList.add(Integer.valueOf(i));
 		}
         pns.setInitial(n);
-        pns.setPnList(pnList);
+        pns.setPrimes(pnList);
 		
 		return pns;
 	}

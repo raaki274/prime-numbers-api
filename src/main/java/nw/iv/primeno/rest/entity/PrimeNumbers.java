@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class PrimeNumbers {
 	private int Initial;
 	private String calcMethod;
-	private List<Integer> pnList;
+	private List<Integer> Primes;
 	private List<String> validationError;
 
 
@@ -28,19 +28,19 @@ public class PrimeNumbers {
 		this.calcMethod = calcMethod;
 	}
 	
-	public List<Integer> getPnList() {
-		return pnList;
-	}
-
-	public void setPnList(List<Integer> pnList) {
-		this.pnList = pnList;
-	}
-	
 	public List<String> getValidationError() {
 		return validationError;
 	}
 
 	public void setValidationError(List<String> validationError) {
 		this.validationError = validationError;
+	}
+
+	public List<Integer> getPrimes() {
+		return Primes;
+	}
+
+	public void setPrimes(List<Integer> primes) {
+		Primes = primes;
 	}
 }

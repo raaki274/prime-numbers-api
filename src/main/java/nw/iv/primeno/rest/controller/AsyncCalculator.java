@@ -39,13 +39,13 @@ public class AsyncCalculator {
 		PrimeNumbers pns;
 		for(int i=0; i<iter; i++) {
 			pns = calcMethod.calculatePrimeNumbers(low+1, high);
-			cMap.put(Integer.valueOf(low), pns.getPnList());
+			cMap.put(Integer.valueOf(low), pns.getPrimes());
 			low=high;
 			high=high+sliceSize;
 		}
 		if(reminder > 0) {
 			pns = calcMethod.calculatePrimeNumbers(high+1, high+reminder);
-			cMap.put(Integer.valueOf(high), pns.getPnList());
+			cMap.put(Integer.valueOf(high), pns.getPrimes());
 		}
 		
 		List<Integer> pnList = new ArrayList<>();
@@ -55,7 +55,7 @@ public class AsyncCalculator {
 		
 		pns = new PrimeNumbers();
 		pns.setInitial(n);
-		pns.setPnList(pnList);
+		pns.setPrimes(pnList);
 		
 		return pns;
 	}

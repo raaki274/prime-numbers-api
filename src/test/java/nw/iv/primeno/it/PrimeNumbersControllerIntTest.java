@@ -37,7 +37,7 @@ public class PrimeNumbersControllerIntTest {
 		          .getForObject("http://localhost:" + port + "/primes/45", PrimeNumbers.class);
 		  
 		  assertTrue(pns.getInitial() == 45);
-		  assertTrue(pns.getPnList().size() > 0);
+		  assertTrue(pns.getPrimes().size() > 0);
 	  }
 	  
 	  @Test
@@ -47,7 +47,7 @@ public class PrimeNumbersControllerIntTest {
 		          .getForObject("http://localhost:" + port + "/primes/20000000", PrimeNumbers.class);
 		  
 		  assertTrue(pns.getInitial() == 20000000);
-		  assertTrue(pns.getPnList().size() > 0);
+		  assertTrue(pns.getPrimes().size() > 0);
 	  }
 	  
 	  @Test
@@ -57,7 +57,7 @@ public class PrimeNumbersControllerIntTest {
 		          .getForObject("http://localhost:" + port + "/primes/4500000/siera", PrimeNumbers.class);
 		  
 		  assertTrue(pns.getInitial() == 4500000);
-		  assertTrue(pns.getPnList().size() > 0);
+		  assertTrue(pns.getPrimes().size() > 0);
 	  }
 	  
 	  @Test
@@ -67,7 +67,7 @@ public class PrimeNumbersControllerIntTest {
 		          .getForObject("http://localhost:" + port + "/primes/1450000/segsie?rsptype=xml", PrimeNumbers.class);
 		  
 		  assertTrue(pns.getInitial() == 1450000);
-		  assertTrue(pns.getPnList().size() > 0);
+		  assertTrue(pns.getPrimes().size() > 0);
 	  }
 	  
 	  @Test
