@@ -13,7 +13,7 @@ This is a REST based API will respond with list of prime numbers from 2 to N for
 This API is deployed on Render and it cann be accessed through the URL `https://primenos.onrender.com/primes+URIs` from the list of usage scenario given below,
 
 ## Usage Scenarios
-* `GET /99`
+* `GET` `/99`
   * Retrieves the list of prime numbers calculated between `2 and 99` using naive method
 * `GET /100000/siera`
   * Retrieves the list of prime numbers calculated between `2 and 100000` using Sieve of Eratosthenes method
