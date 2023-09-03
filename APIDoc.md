@@ -106,8 +106,6 @@ This API is deployed on Render and it cann be accessed through the URL `https://
 </PrimeNumbers>
 ```
 
-## Note
-```
+### Note
 This API is developed on Mac OS using Eclipse IDE with required dependencies like JDK, Maven and Git provided by Eclipse, and with required cofigs/settings the can be modified and enhanced further using any other IDEs like IntelliJ. For running this API on you local machine you will require `Java 17 or above, Maven 4 and Git desktop/bash/client` installed on your machine.
-```
 
