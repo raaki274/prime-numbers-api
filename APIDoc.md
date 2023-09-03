@@ -1,5 +1,5 @@
 # primeno-api documentation
-This is a REST based API will respond with list of prime numbers from 2 to N for the given Numbers in JSON format by default and it can respond in XML format as well based on the input.
+This is a REST based API will respond with the list of prime numbers caclculated between 2 and N for the given Number, the response will be in JSON format by default and it can respond in XML format as well when requested.
 
 ## Tools & Tech Stack
 * Java 17.x.x
