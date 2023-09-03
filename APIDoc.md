@@ -1,5 +1,5 @@
 # primeno-api documentation
-This is a REST based API will respond with the list of prime numbers caclculated between 2 and N for the given Number, the response will be in JSON format by default and it can respond in XML format as well when requested.
+This is a REST based API will respond with the list of prime numbers calculated between 2 and N for the given Number, default response will be in JSON format, and it can respond in XML format when requested.
 
 ## Tools & Tech Stack
 * Java 17.x.x
@@ -106,5 +106,7 @@ This API is deployed on `Render` and it can be accessed through the URL `https:/
 </PrimeNumbers>
 ```
 
-### Note
+## Running and modifying the API
+The packaged executable `primeno-0.0.1-SNAPSHOT.jar` is available in the repository under the directory `/snapshot`, you can download it and run it locally if you have JRE 17 on your machine; run the command `java -jar primeno-0.0.1-SNAPSHOT.jar` to start the application on the port number `8080` and you can access the application using the URL: `http://localhost:8080/primes`
+
 This API is developed on Mac OS using Eclipse IDE with required dependencies like JDK, Maven and Git provided by Eclipse, and it can be modified and enhanced further using any other IDEs like IntelliJ with required cofig/settings. For running this API on your local machine without using any IDE, you will require `Java 17 or above, Maven 4 and Git desktop/bash/client` installed on your machine and must be familiar with Java, Spring Boot and Maven commands.
