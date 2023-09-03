@@ -12,7 +12,7 @@ import nw.iv.primeno.rest.entity.PrimeNumbers;
 @Service
 public class SieveOfEratosthenesMethod implements CalculationMethod {
 	
-	private int[] primeNos = new int[10000001];
+	private int[] primeNos = new int[1000001];
 	
 	@Override
 	@Cacheable(value = "primenumbers", key = "#n")
