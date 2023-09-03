@@ -20,13 +20,59 @@ This API is deployed on Render and it cann be accessed through the URL https://p
 * `GET /2500000/segsie`
   * Retrieves the list of prime numbers calculated between `2 and 2500000` using Segmented Sieve method and
 * `GET /1000001`
-  * Retrieves the list of prime numbers calculated between `2 and 1000001` using Segmented Sieve method and aysynchrnous approach, when the given input `N > 1000000` the API will spawn `(N/1000000)+1` number of async threads and will agrregate the list of prime numbers received from each thread, it will sort the list before it return the response.
+  * Retrieves the list of prime numbers calculated between `2 and 1000001` using Segmented Sieve method and aysynchrnous threads and this is the fastest all the methods used inthis API; when the given input `N > 1000000` the API will spawn `(N/1000000)+1` number of async threads and will agrregate the list of prime numbers received from each thread, it will sort the list before it return the response.
 * `GET /45?rsptype=xml`
   * Retrieves the list of prime numbers calculated between 2 and 45 using naive method and the response will be in XML format
 * `GET /30000/siera?rsptype=xml`
   * Retrieves the list of prime numbers calculated between 2 and 30000 using Sieve of Eratosthenes method and the response will be in XML format
 * `GET /1500000/segsie?rsptype=xml`
   * Retrieves the list of prime numbers calculated between 2 and 1500000 using Segmented Sieve method and the response will be in XML format
+* `GET /1`
+  * Returns validation error message as the given input `N < 2`
+* `GET /0?rsptype=xml`
+  * Returns validation error message in XML format as the given input `N < 2` and requested response type is XML
+* `GET /25/xyz`
+  * Returns validation error message as the given input `Calc Method` is invalid; valid calc methods are `siera` for `Sieve of Eratosthenes` and 'segsie` for `Segmented Sieve`
+
+## Sample response messages
+* Success response (JSON)
+`{
+    "initial": 10,
+    "primes": [
+        2,
+        3,
+        5,
+        7
+    ]
+}`
+
+* Validation error response for invalid number (JSON)
+`{
+    "validationError": [
+        "Received invalid number to calculate prime numbers"
+    ],
+    "initial": 1
+}`
+
+* Validation error response for invalid calc method (JSON)
+`{
+    "calcMethod": "abc",
+    "validationError": [
+        "Received invalid calc method to calculate prime numbers, it should be any one of: [siera, segsie]"
+    ],
+    "initial": 5
+}`
+
+* Validation error response for invalid number and calc method (JSON)
+`{
+    "calcMethod": "abc",
+    "validationError": [
+        "Received invalid number to calculate prime numbers",
+        "Received invalid calc method to calculate prime numbers, it should be any one of: [siera, segsie]"
+    ],
+    "initial": 1
+}`
+
 
 
 
