@@ -10,9 +10,9 @@ This is a REST based API will respond with list of prime numbers from 2 to N for
 * Jackson Faster XML
 * GitHub
 
-This API is deployed on Render and it cann be accessed through the URL https://primenos.onrender.com/primes and the URIs from the user scenarios given below,
+This API is deployed on Render and it cann be accessed through the URL `https://primenos.onrender.com/primes+URIs` from the list of usage scenario given below,
 
-## User Scenarios
+## Usage Scenarios
 * `GET /99`
   * Retrieves the list of prime numbers calculated between `2 and 99` using naive method
 * `GET /100000/siera`
