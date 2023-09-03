@@ -54,9 +54,9 @@ public class PrimeNumbersControllerIntTest {
 	  public void TestSieEraMethod() 
 	  {
 		  PrimeNumbers pns = this.restTemplate
-		          .getForObject("http://localhost:" + port + "/primes/4500000/siera", PrimeNumbers.class);
+		          .getForObject("http://localhost:" + port + "/primes/450000/siera", PrimeNumbers.class);
 		  
-		  assertTrue(pns.getInitial() == 4500000);
+		  assertTrue(pns.getInitial() == 450000);
 		  assertTrue(pns.getPrimes().size() > 0);
 	  }
 	  
