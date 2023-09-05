@@ -10,28 +10,28 @@ This is a REST based API will respond with the list of prime numbers calculated 
 * Jackson Faster XML
 * GitHub
 
-This API is deployed on `Render` and it can be accessed through the URL `https://primenos.onrender.com/primes+URIs` from the list of usage scenario given below,
+This API is deployed on `Render` and it can be accessed through the URL `https://primenos.onrender.com/primes+URIs` and you can find the URIs from the list of usage scenario given below,
 
 ## Usage Scenarios
-* `GET` `/99`
+* `GET` `URL/99`
   * Retrieves the list of prime numbers calculated between `2 and 99` using naive method
-* `GET` `/100000/siera`
+* `GET` `URL/100000/siera`
   * Retrieves the list of prime numbers calculated between `2 and 100000` using Sieve of Eratosthenes method
-* `GET` `/2500000/segsie`
+* `GET` `URL/2500000/segsie`
   * Retrieves the list of prime numbers calculated between `2 and 2500000` using Segmented Sieve method and
-* `GET` `/1000001`
+* `GET` `URL/1000001`
   * Retrieves the list of prime numbers calculated between `2 and 1000001` using Segmented Sieve method and asynchronous threads and this is the fastest all the methods used in this API; when the given input `N > 1000000` the API will spawn `(N/1000000)+1` number of async threads and will aggregate the list of prime numbers received from each thread, it will sort the list before it return the response.
-* `GET` `/45?rsptype=xml`
+* `GET` `URL/45?rsptype=xml`
   * Retrieves the list of prime numbers calculated between 2 and 45 using naive method and the response will be in XML format
-* `GET` `/30000/siera?rsptype=xml`
+* `GET` `URL/30000/siera?rsptype=xml`
   * Retrieves the list of prime numbers calculated between 2 and 30000 using Sieve of Eratosthenes method and the response will be in XML format
-* `GET` `/1500000/segsie?rsptype=xml`
+* `GET` `URL/1500000/segsie?rsptype=xml`
   * Retrieves the list of prime numbers calculated between 2 and 1500000 using Segmented Sieve method and the response will be in XML format
-* `GET` `/1`
+* `GET` `URL/1`
   * Returns validation error message as the given input `N < 2`
-* `GET` `/0?rsptype=xml`
+* `GET` `URL/0?rsptype=xml`
   * Returns validation error message in XML format as the given input `N < 2` and requested response type is XML
-* `GET` `/25/xyz`
+* `GET` `URL/25/xyz`
   * Returns validation error message as the given input `Calc Method` is invalid; valid calc methods are `siera` for `Sieve of Eratosthenes` and 'segsie` for `Segmented Sieve`
 
 ## Sample response messages
@@ -109,4 +109,6 @@ This API is deployed on `Render` and it can be accessed through the URL `https:/
 ## Running and modifying the API
 The packaged executable `primeno-0.0.1-SNAPSHOT.jar` is available in the repository under the directory `/snapshot`, you can download it and run it locally if you have JRE 17 on your machine; run the command `java -jar primeno-0.0.1-SNAPSHOT.jar` to start the application on the port number `8080` and you can access the application using the URL: `http://localhost:8080/primes`
 
-This API is developed on Mac OS using Eclipse IDE with required dependencies like JDK, Maven and Git provided by Eclipse, and it can be modified and enhanced further using any other IDEs like IntelliJ with required cofig/settings. For running this API on your local machine without using any IDE, you will require `Java 17 or above, Maven 4 and Git desktop/bash/client` installed on your machine and must be familiar with Java, Spring Boot and Maven commands.
+This API is developed on Mac OS using Eclipse IDE with required dependencies like JDK, Maven and Git Client provided by Eclipse, with required cofig/settings, API code can be modified, enhanced, compiled and executed further using any other IDEs like IntelliJ supporting Java development.
+
+For changing and running this API on your local machine without using any IDE, you will require `Java 17 or above, Maven 4 and Git desktop/bash/client` installed on your machine and you must be familiar with Java, Spring Boot and Maven commands.
