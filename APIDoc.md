@@ -107,7 +107,7 @@ This API is deployed on `Render` and it can be accessed through the URL `https:/
 ```
 
 ## Running and modifying the API
-The packaged executable `primeno-0.0.1-SNAPSHOT.jar` is available in the repository under the directory `/snapshot`, you can download it and run it locally if you have JRE 17 on your machine; run the command `java -jar primeno-0.0.1-SNAPSHOT.jar` to start the application on the port number `8080` and you can access the application using the URL: `http://localhost:8080/primes`
+The packaged executable `primeno-0.0.1-SNAPSHOT.jar` is available in the repository under the directory `/snapshot`, you can download it and run it locally if you have JRE 17 on your machine; run the command `java -jar primeno-0.0.1-SNAPSHOT.jar` to start the application on the port number `8080` and you can access the application using the URL: `http://localhost:8080/primes/URI`
 
 This API is developed on Mac OS using Eclipse IDE with required dependencies like JDK, Maven and Git Client provided by Eclipse, with required cofig/settings, API code can be modified, enhanced, compiled and executed further using any other IDEs like IntelliJ supporting Java development.
 
