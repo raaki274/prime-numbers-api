@@ -22,11 +22,11 @@ This API is deployed on `Render` and it can be accessed through the URL `https:/
 * `GET` `URL/1000001`
   * Retrieves the list of prime numbers calculated between `2 and 1000001` using Segmented Sieve method and asynchronous threads and this is the fastest all the methods used in this API; when the given input `N > 1000000` the API will spawn `(N/1000000)+1` number of async threads and will aggregate the list of prime numbers received from each thread, it will sort the list before it return the response.
 * `GET` `URL/45?rsptype=xml`
-  * Retrieves the list of prime numbers calculated between 2 and 45 using naive method and the response will be in XML format
+  * Retrieves the list of prime numbers calculated between `2 and 45` using naive method and the response will be in XML format
 * `GET` `URL/30000/siera?rsptype=xml`
-  * Retrieves the list of prime numbers calculated between 2 and 30000 using Sieve of Eratosthenes method and the response will be in XML format
+  * Retrieves the list of prime numbers calculated between `2 and 30000` using Sieve of Eratosthenes method and the response will be in XML format
 * `GET` `URL/1500000/segsie?rsptype=xml`
-  * Retrieves the list of prime numbers calculated between 2 and 1500000 using Segmented Sieve method and the response will be in XML format
+  * Retrieves the list of prime numbers calculated between `2 and 1500000` using Segmented Sieve method and the response will be in XML format
 * `GET` `URL/1`
   * Returns validation error message as the given input `N < 2`
 * `GET` `URL/0?rsptype=xml`
