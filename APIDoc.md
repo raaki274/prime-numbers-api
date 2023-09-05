@@ -12,7 +12,7 @@ This is a REST based API will respond with the list of prime numbers calculated 
 
 This API is deployed on `Render` and it can be accessed through the URL `https://primenos.onrender.com/primes+URIs` and you can find the URIs from the list of usage scenario given below,
 
-## Usage Scenarios
+## URIs & Usage Scenarios
 * `GET` `URL/99`
   * Retrieves the list of prime numbers calculated between `2 and 99` using naive method
 * `GET` `URL/100000/siera`
